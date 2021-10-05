@@ -18,12 +18,12 @@ public class Main {
         */
         for (int i = 1; i <= 100; i++) {
 
-            if (i % 3 == 0) {
-                System.out.print("Hello. ");
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.print("Hello World ");
             } else if (i % 5 == 0) {
                 System.out.print("World. ");
-            } else if (i % 3 == 0 && i % 5 == 0) {
-                System.out.print("Hello World ");
+            } else if (i % 3 == 0) {
+                System.out.print("Hello. ");
             } else {
                 System.out.print(i + " ");
             }
@@ -34,25 +34,13 @@ public class Main {
         Заполнить массив из 10 элементов случайными целыми числами от 10(включительно) до 20(включительно).
         Вывести среднее арифметическое.
         */
-        int firstNumber = 10;
-        int lastNumber = 20;
-
-        int firstRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int secondRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int thirdRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int fourthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int fifthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int sixthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int seventhRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int eighthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int ninthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-        int tenthRandomNumber = firstNumber + (int) (Math.random() * ((lastNumber - firstNumber) + 1));
-
-        int[] array = new int[]{firstRandomNumber, secondRandomNumber, thirdRandomNumber, fourthRandomNumber,
-                fifthRandomNumber, sixthRandomNumber, seventhRandomNumber, eighthRandomNumber, ninthRandomNumber, tenthRandomNumber};
-        System.out.println('\n');
-
-        System.out.println(Arrays.toString(array));
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) Math.round((Math.random()*11)+10);
+        }
+        String arrayString =Arrays.toString(array);
+        System.out.print('\n');
+        System.out.print(arrayString);
 
         double[] newArray = new double[array.length];
         Arrays.setAll(newArray, arrayIndex -> (double) array[arrayIndex]);
@@ -63,6 +51,7 @@ public class Main {
             sum += v;
         }
         average = sum / newArray.length;
+        System.out.print('\n');
         System.out.println(average);
 
         createString();
