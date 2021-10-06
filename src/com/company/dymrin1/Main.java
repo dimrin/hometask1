@@ -45,16 +45,16 @@ public class Main {
         double[] newArray = new double[array.length];
         Arrays.setAll(newArray, arrayIndex -> (double) array[arrayIndex]);
 
-        double average = 0;
         double sum = 0;
         for (double v : newArray) {
             sum += v;
         }
+        double average =0;
         average = sum / newArray.length;
         System.out.print('\n');
         System.out.println(average);
 
-        createString();
+        System.out.println(createString());
 
         createLongString();
 
@@ -64,13 +64,13 @@ public class Main {
     Написать метод который вернет String в которой будут в одну строку числа от 1 до 30.
     Каждое число при этом взять в круглые скобки ().
     */
-    public static String createString() {
-
-        for (int i = 0; i <= 30; i++) {
-            String newString = "(" + i + ")";
-            System.out.print(newString);
+    
+    public static String createString(){
+        StringBuilder result = new StringBuilder("");
+        for (int i = 1; i <= 30; i++) {
+            result.append("(").append(i).append(")");
         }
-        return " ";
+        return result.toString();
     }
 
     /*
