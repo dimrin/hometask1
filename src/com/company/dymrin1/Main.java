@@ -36,27 +36,26 @@ public class Main {
         */
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) Math.round((Math.random()*11)+10);
+            array[i] = (int) Math.round((Math.random() * 11) + 10);
         }
-        String arrayString =Arrays.toString(array);
+        String arrayString = Arrays.toString(array);
         System.out.print('\n');
         System.out.print(arrayString);
 
         double[] newArray = new double[array.length];
         Arrays.setAll(newArray, arrayIndex -> (double) array[arrayIndex]);
 
+
         double sum = 0;
         for (double v : newArray) {
             sum += v;
         }
-        double average =0;
+        double average = 0;
         average = sum / newArray.length;
         System.out.print('\n');
         System.out.println(average);
 
         System.out.println(createString());
-
-        createLongString();
 
     }
 
@@ -64,34 +63,13 @@ public class Main {
     Написать метод который вернет String в которой будут в одну строку числа от 1 до 30.
     Каждое число при этом взять в круглые скобки ().
     */
-    
-    public static String createString(){
+
+    public static String createString() {
         StringBuilder result = new StringBuilder("");
         for (int i = 1; i <= 30; i++) {
             result.append("(").append(i).append(")");
         }
         return result.toString();
-    }
-
-    /*
-    Написать метод который убирает лишние пробелы в строке и возвращает строку.
-    */
-    public static String createLongString() {
-
-        String longString = " This  is  my  first  hometask ";
-        StringBuilder stringBuilder = new StringBuilder(longString);
-        stringBuilder.delete(0, 1);
-        stringBuilder.delete(5, 6);
-        stringBuilder.delete(7, 8);
-        stringBuilder.delete(11, 12);
-        stringBuilder.delete(17, 18);
-        stringBuilder.delete(25, 26);
-
-        longString = stringBuilder.toString();
-        System.out.println('\n');
-        System.out.println(longString);
-
-        return "";
     }
 
 
